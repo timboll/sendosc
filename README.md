@@ -2,7 +2,7 @@
 sendosc is a simple command-line tool for sending OSC packet.
 
 timboll/sendosc fork adds to sendosc.cpp a line of code that enables broadcast capability (ip address x.x.x.255)
-``` 50    transmitSocket.SetEnableBroadcast(true);
+``` 50    transmitSocket.SetEnableBroadcast(true); ```
 
 https://github.com/RossBencina/oscpack/blob/master/ip/UdpSocket.h#L94C1-L95C1
 
