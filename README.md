@@ -1,6 +1,11 @@
 ## sendosc
 sendosc is a simple command-line tool for sending OSC packet.
 
+timboll/sendosc fork adds to sendosc.cpp a line of code that enables broadcast capability (ip address x.x.x.255)
+``` 50    transmitSocket.SetEnableBroadcast(true);
+
+https://github.com/RossBencina/oscpack/blob/master/ip/UdpSocket.h#L94C1-L95C1
+
 ## usage
 ```
 sendosc
@@ -21,18 +26,21 @@ usage : sendosc dst_host dst_port path [[type] [param]] ...
 ```
 
 ## How to install
-### macOS 
-Install via [Homebrew](https://brew.sh/)
-
+### macOS
 ```
-$ brew install yoggy/tap/sendosc
+% cd ~
+% git clone https://github.com/timboll/sendosc.git
+% cd sendosc
+% cmake .
+% make
+% sudo cp ./sendosc /usr/local/bin/sendosc
 ```
 
 ### debian & ubuntu
 ```
 $ sudo apt-get install liboscpack-dev
 $ cd ~
-$ git clone https://github.com/yoggy/sendosc.git
+$ git clone https://github.com/timboll/sendosc.git
 $ cd sendosc
 $ cmake .
 $ make
@@ -68,7 +76,7 @@ $ sudo make install
 #### clone, compile and install sendosc 
 ```
 $ cd ~
-$ git clone https://github.com/yoggy/sendosc.git
+$ git clone https://github.com/timboll/sendosc.git
 $ cd sendosc
 $ sudo pacman -S cmake
 $ cmake .
@@ -76,12 +84,9 @@ $ make
 $ sudo cp ./sendosc /usr/local/bin/sendosc
 ```
 ## Windows (experimental)
-pre-built binary for windows
-
-- [sendosc-win-1.0.2.zip](https://github.com/yoggy/sendosc/releases/download/v1.0.2/sendosc-win-1.0.2.zip)
 
 ```
-> git clone https://github.com/yoggy/sendosc.git
+> git clone https://github.com/timboll/sendosc.git
 > cd sendosc
 > mkdir build
 > cd build
