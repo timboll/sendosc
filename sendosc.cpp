@@ -47,6 +47,7 @@ main(int argc, char* argv[])
     char *host = argv[1];
     unsigned short port = atoi(argv[2]);
     UdpTransmitSocket transmitSocket(IpEndpointName(host, port));
+    transmitSocket.SetEnableBroadcast(true);
     
     // setup packet
     char buf[BUF_SIZE];
